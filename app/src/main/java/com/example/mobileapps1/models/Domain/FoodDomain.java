@@ -1,11 +1,13 @@
 package com.example.mobileapps1.models.Domain;
 
-public class FoodDomain {
+import java.io.Serializable;
+
+public class FoodDomain implements Serializable {
     private String title;
     private String pic;
     private String description;
     private Double fee;
-    private int numberinCart;
+    private int numberInCart;
 
     public FoodDomain(String title, String pic, String description, Double fee) {
         this.title = title;
@@ -19,7 +21,7 @@ public class FoodDomain {
         this.pic = pic;
         this.description = description;
         this.fee = fee;
-        this.numberinCart = numberinCart;
+        this.numberInCart = numberinCart;
     }
 
     public String getTitle() {
@@ -42,7 +44,7 @@ public class FoodDomain {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription() {
         this.description = description;
     }
 
@@ -54,11 +56,11 @@ public class FoodDomain {
         this.fee = fee;
     }
 
-    public int getNumberinCart() {
-        return numberinCart;
+    public int getNumberInCart() {
+        return numberInCart;
     }
 
-    public void setNumberinCart(int numberinCart) {
-        this.numberinCart = numberinCart;
+    public void setNumberInCart(int numberInCart) {
+        this.numberInCart = numberInCart;
     }
 }

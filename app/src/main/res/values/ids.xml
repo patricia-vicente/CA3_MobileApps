@@ -6,4 +6,5 @@
     <item name="settingsBtn" type="id" />
     <item name="invisibleBtn" type="id" />
     <item name="title" type="id" />
+    <item name="feeEachItem" type="id" />
 </resources>
