@@ -1,6 +1,9 @@
 package com.example.mobileapps1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,6 +13,7 @@ import com.example.mobileapps1.models.Adaptor.CategoryAdaptor;
 import com.example.mobileapps1.models.Adaptor.PopularAdaptor;
 import com.example.mobileapps1.models.Domain.CategoryDomain;
 import com.example.mobileapps1.models.Domain.FoodDomain;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -24,6 +28,24 @@ public class Products extends AppCompatActivity {
 
         recyclerViewCategory();
         recyclerViewPopular();
+        bottomNavigation();
+    }
+    private void bottomNavigation(){
+        FloatingActionButton floatingActionButton=findViewById(R.id.cartBtn2);
+        LinearLayout homeBtn=findViewById(R.id.homeBtn);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Products.this, CartListAcvivity.class));
+            }
+        });
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Products.this, Products.class));
+            }
+        });
     }
 
     private void recyclerViewCategory() {

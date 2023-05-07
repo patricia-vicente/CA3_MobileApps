@@ -1,5 +1,6 @@
 package com.example.mobileapps1.models.Adaptor;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +23,9 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     private ManagementCart managementCart;
     private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<FoodDomain> foodDomain, ManagementCart managementCart, ChangeNumberItemsListener changeNumberItemsListener) {
+    public CartListAdapter(ArrayList<FoodDomain> foodDomain, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
         this.foodDomain = foodDomain;
-        this.managementCart = managementCart;
+        this.managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
 
@@ -52,7 +53,28 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.plusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                managementCart.plusNumberFood(foodDomain, position, new ChangeNumberItemsListener() {
+                    @Override
+                    public void change() {
+                        notifyDataSetChanged();
+                        changeNumberItemsListener.changed();
+                    }
+                });
 
+            }
+        });
+
+        holder.minusItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                managementCart.minusNumberFood(foodDomain, position, new ChangeNumberItemsListener() {
+
+                    @Override
+                    public void change() {
+                        notifyDataSetChanged();
+                        changeNumberItemsListener.changed();
+                    }
+                });
             }
         });
     }
@@ -74,7 +96,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
             totalEachItem = itemView.findViewById(R.id.totalEachItem);
             num = itemView.findViewById(R.id.numberItemTxy);
             plusItem = itemView.findViewById(R.id.plusCartBtn);
-            minusItem = itemView.findViewById(R.id.minusBtn);
+            minusItem = itemView.findViewById(R.id.minusCartBtn);
 
         }
     }
