@@ -45,9 +45,9 @@ public class ManagementCart {
     public void plusNumberFood(ArrayList<FoodDomain>listFood, int position, ChangeNumberItemsListener changeNumberItemsListener) {
         listFood.get(position).setNumberInCart(listFood.get(position).getNumberInCart()+1);
         tiny.putListObject("CartList", listFood);
-        changeNumberItemsListener.changed();
+        changeNumberItemsListener.change();
     }
-    public void minusNumberFood(ArrayList<FoodDomain> listFood, int position,ChangeNumberItemsListener) {
+    public void minusNumberFood(ArrayList<FoodDomain> listFood, int position,ChangeNumberItemsListener changeNumberItemsListener) {
         if(listFood.get(position).getNumberInCart()==1){
             listFood.remove(position);
         } else {
@@ -55,7 +55,7 @@ public class ManagementCart {
         }
 
         tiny.putListObject("CartList", listFood);
-        changeNumberItemsListener.changed();
+        changeNumberItemsListener.change();
     }
 
     public double getTotalFee(){

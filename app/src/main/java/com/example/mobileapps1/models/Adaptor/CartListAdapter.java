@@ -57,7 +57,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
                     @Override
                     public void change() {
                         notifyDataSetChanged();
-                        changeNumberItemsListener.changed();
+                        changeNumberItemsListener.change();
                     }
                 });
 
@@ -72,7 +72,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
                     @Override
                     public void change() {
                         notifyDataSetChanged();
-                        changeNumberItemsListener.changed();
+                        changeNumberItemsListener.change();
                     }
                 });
             }
