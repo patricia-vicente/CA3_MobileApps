@@ -46,7 +46,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/taxTxt"
+                    android:id="@+id/totalFeeTxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -76,7 +76,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/deliveryTxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -105,7 +105,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/taxTxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -135,7 +135,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/totalTxt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

@@ -44,7 +44,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.totalEachItem.setText(String.valueOf(Math.round((foodDomain.get(position).getNumberInCart() * foodDomain.get(position).getFee()) * 100) / 100));
         holder.num.setText(String.valueOf(foodDomain.get(position).getNumberInCart()));
 
-        int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(foodDomain.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName();
+        int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(foodDomain.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
